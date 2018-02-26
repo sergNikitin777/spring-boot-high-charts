@@ -21,11 +21,11 @@ public class ScheduleTask {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
     // this will send a message to an endpoint on which a client can subscribe
-    @Scheduled(fixedRate = 1000)
+    //@Scheduled(fixedRate = 1000)
     public void execute() {
         // sends the message to /topic/message
     	//log.info(" RATNO Triggering WS message "+this.template.hashCode());
-    	Integer value = getRandomNumberInRange(0, 200);
+    	Integer value = getRandomNumberInRange(20, 60);
     	//log.info(" *** value *** = "+ value);
         //this.template.convertAndSend("/topic/message", "Date: " + dateFormat.format(new Date()));
         this.template.convertAndSend("/topic/airquality/temperature", ""+value );
