@@ -1,7 +1,6 @@
 package com.chakrar.chartapp;
 
 import com.chakrar.chartapp.model.ThermoSensor;
-import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -10,8 +9,6 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @Controller
 public class HomeController {
