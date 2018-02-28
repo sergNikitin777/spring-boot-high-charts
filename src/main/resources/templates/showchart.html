@@ -9,8 +9,8 @@
    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
       th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
       rel="stylesheet" media="screen" />   
-   <script src="js/sockjs-0.3.4.js"></script>
-   <script src="js/stomp.js"></script>
+   <script src="/js/sockjs-0.3.4.js"></script>
+   <script src="/js/stomp.js"></script>
    
 </head>
 <body>
@@ -71,7 +71,7 @@ $(document).ready(function() {
 	  min: 0,
       max: 200,
       title: {
-         text: 'Speed'
+         text: 'Themperature'
       }
    };	  
    
@@ -106,7 +106,7 @@ $(document).ready(function() {
       dataLabels: {
          format: '<div style="text-align:center"><span style="font-size:25px;color:' +
          ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
-         '<span style="font-size:12px;color:silver">km/h</span></div>'
+         '<span style="font-size:12px;color:silver">С°</span></div>'
       },
       tooltip: {
          valueSuffix: '°С'
@@ -127,7 +127,7 @@ $(document).ready(function() {
    // the value axis
   
 
-	   var socket = new SockJS('/stomp');
+	   var socket = new SockJS('/charts/stomp');
 
 	   var stompClient = Stomp.over(socket);
 	   
